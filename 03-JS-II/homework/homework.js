@@ -74,19 +74,15 @@ function colors(color) {
   //Usar el statement Switch.
   switch (color) {
     case "blue":
-      "This is blue";
-      break;
+      return "This is blue";
     case "red":
-      "This is red";
-      break;
+      return "This is red";
     case "green":
-      "This is green";
-      break;
+      return "This is green";
     case "orange":
-      "This is orange";
-      break;
+      return "This is orange";
     default:
-      "Color not found";
+      return "Color not found";
   }
 }
 colors("blue")
@@ -99,7 +95,7 @@ function esDiezOCinco(numero) {
   // Devuelve "true" si "numero" es 10 o 5
   // De lo contrario, devuelve "false"
   // Tu código:
-  if (numero === 5 || numero === 10) {
+  if (numero === 10 || numero === 5) {
     return true
   }
   return false
@@ -126,7 +122,8 @@ function esEntero(numero) {
   // Pista: Puedes resolver esto usando `Math.floor`
   // Tu código:
   if (Number.isInteger(numero) === false) {
-    Math.floor(numero);
+    var newNum = Math.floor(numero);    
+  } if(Number.isInteger(newNum) === true) {
     return true
   }
   return false
@@ -156,19 +153,19 @@ function operadoresLogicos(num1, num2, num3) {
   //Si num3 es más grande que num1 y num2, aumentar su valor en 1 y retornar el nuevo valor.
   //0 no es ni positivo ni negativo. Si alguno de los argumentos es 0, retornar "Error".
   //Si no se cumplen ninguna de las condiciones anteriores, retornar false. 
-  if(num1 > num2 > num3 && num1 > 0) {
-    return "Número 1 es mayor y positivo"
-  } else if (num1 < 0 || num2 < 0 || num3 < 0) {
-    return "Hay negativos"
-  } else if (num3 > num1 > num2) {
-    newNum3 = num3 + 1
+  if(num3 > num1 > num2) {
+    var newNum3 = num3 + 1
     return newNum3
   } else if (num1 === 0 || num2 === 0 || num3 === 0 ) {
     return "Error"
-  }
+  } else if (num1 < 0 || num2 < 0 || num3 < 0) {
+    return "Hay negativos"
+  } else if (num1 > 0 && num1 > num2 > num3) {
+    return "Número 1 es mayor y positivo"    
+  }   
   return false
 }
-operadoresLogicos(7, 45, 23)
+operadoresLogicos(77, -15, 23)
 
 function esPrimo(numero) {
   // Devuelve "true" si "numero" es primo
@@ -178,9 +175,9 @@ function esPrimo(numero) {
   // Nota: Los números 0 y 1 NO son considerados números primos
   for(let i = 2; i < numero; i++) {
     if (numero % i === 0 ) {
-      return "false"
+      return false
     }
-    return "true"
+    return true
   }
 }
 esPrimo(9)
@@ -196,6 +193,7 @@ function esVerdadero(valor){
   }
 }
 esVerdadero(true)
+esVerdadero(false)
 
 function tablaDelSeis(){
   //Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
