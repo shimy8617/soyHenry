@@ -26,11 +26,10 @@ function incrementarPorUno(array) {
   // Aumenta cada entero por 1
   // y devuelve el array
   // Tu código:
-  for(var i = 0; i < array.length ; i++) {
-    newArray = [];
-    newArray.push(array[i] + 1) 
-    return newArray
-  }
+  for(var i = array.length-1; i >= 0 ; i--) { 
+    array[i]++; 
+  } 
+  return array
 }
 
 
@@ -59,9 +58,8 @@ function dePalabrasAFrase(palabras) {
   // con espacios entre cada palabra
   // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
   // Tu código:
-  for(var i = 0; i < palabras.lenght; i++) {
-    palabras[i].split(',').concat(' ');
-  }
+  var newString = palabras.join(' '); 
+  return newString
 }
 
 
@@ -69,25 +67,23 @@ function arrayContiene(array, elemento) {
   // Comprueba si el elemento existe dentro de "array"
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
-  for(var i = 0; i < array.length; i++) {
-    if(array[i].find(elemento)) {
+  for(var i = 0; i < array.length - 1; i++) {
+    if (array[i] === elemento) {
       return true
-    } else {
-      return false
-    }
+    }}
+    return false
   }
-}
 
 
 function agregarNumeros(numeros) {
   // "numeros" debe ser un arreglo de enteros (int/integers)
   // Suma todos los enteros y devuelve el valor
   // Tu código:
+    let sum = 0;
   for(var i = 0; i < numeros.length; i++) {
-    sum = 0;
-    sum += numeros[i]
-    return sum
+    sum += numeros[i];
   }
+  return sum
 }
 
 
@@ -98,8 +94,8 @@ function promedioResultadosTest(resultadosTest) {
     var sum = 0;
       for(var i = 0; i < resultadosTest.length; i++) {
       sum = sum + resultadosTest[i];
-      return sum / (resultadosTest.length)
   }
+  return sum / (resultadosTest.length)
 }
 
 
@@ -139,6 +135,13 @@ function multiplicarArgumentos() {
 function cuentoElementos(arreglo){
   //Realiza una función que retorne la cantidad de los elementos del arreglo cuyo valor es mayor a 18.
   //Escribe tu código aquí
+  cant = 0;
+  for (var i = 0; i < arreglo.length; i++) {
+    if(arreglo[i] > 18) {
+      cant = cant + 1;
+    }
+    return cant
+  }
 
 }
 
